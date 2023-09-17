@@ -1,6 +1,5 @@
 const express = require('express');
 const noteRepository = require('../repos/noteRepository');
-
 const router = express.Router();
 
 router.post('/notes', async (req, res) => {
@@ -9,22 +8,19 @@ router.post('/notes', async (req, res) => {
         const now = new Date();
         const newNote = await noteRepository.createNote(title, content, now);
         res.json(newNote);
-
+        
     } catch (error) {
         res.status(500).json({ error: 'Error creating a note' + error.message });
     }
-
 });
 
 router.get('/notes', async (req, res) => {
-
     try {
         const notes = await noteRepository.getAllNotes();
         res.json(notes);
     } catch (error) {
         res.status(500).json({ error: 'Error getting the notes' });
     }
-
 });
 
 
@@ -36,13 +32,11 @@ router.delete('/notes/:id', async (req, res) => {
     } catch (error) {
         res.status(500).json({ error: 'Error deleting the notes' });
     }
-
 });
 
 
 
 router.get('/notes/:id', async (req, res) => {
-
     try {
         const noteId = req.params.id;
 
@@ -57,7 +51,6 @@ router.get('/notes/:id', async (req, res) => {
     } catch (error) {
         res.status(404).json(`error while retrive the note ${error.message}`)
     }
-
 });
 
 
