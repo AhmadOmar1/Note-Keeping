@@ -1,17 +1,13 @@
 .home-page {
-    background-color: #f0f0f0; /* Change to your desired background color */
-    text-align: center;
-    padding: 20px;
-  }
-  
-  
-  .home-page h1 {
-    font-size: 2rem;
-    margin-bottom: 10px;
-  }
-  
-  .home-page p {
-    font-size: 1.2rem;
-    color: #666;
-  }
-  
+  display: flex;
+  flex-direction: column;
+  gap: 5rem;
+}
+
+.container {
+  margin-top: 4rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3rem;
+}
