@@ -1,0 +1,46 @@
+/* .centered-card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  } */
+
+.cardStyle {
+  width: 300px;
+  height: 180px;
+  cursor: pointer;
+  box-shadow: 0 1px 5px 1px;
+}
+
+
+.cardContentStyle{
+  background-color: rgb(134, 201, 196);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: start;
+  justify-content: space-between;
+}
+
+.date-field {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 25px;
+  padding-inline: 0.4rem;
+  font-size: 14px;
+  font-weight: 500;
+  color: black;
+  background-color: rgba(221, 241, 239, 0.493);
+  box-shadow: 1px 1px 2px 0px;
+
+
+}
+
+.last-line {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 0;
+}
