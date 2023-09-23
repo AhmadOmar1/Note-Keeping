@@ -6,19 +6,13 @@ import DialogContent from '@mui/material/DialogContent';
 import DialogContentText from '@mui/material/DialogContentText';
 import DialogTitle from '@mui/material/DialogTitle';
 
-export default function AlertDialog({ isOpen, onDelete }) {
-  const handleClose = (agree) => {
-    if(agree) {
-         onDelete();
-    }
-   
-  };
+export default function AlertDialog({ isOpen, confirmDelete,setOpenAlertDialog}) {
 
 
   return (
     <div>
       <Dialog
-        open={isOpen} // Use the 'isOpen' prop directly
+        open={isOpen} 
         aria-labelledby="alert-dialog-title"
         aria-describedby="alert-dialog-description"
       >
@@ -31,8 +25,8 @@ export default function AlertDialog({ isOpen, onDelete }) {
           </DialogContentText>
         </DialogContent>
         <DialogActions>
-          <Button onClick={() => (false)}>Disagree</Button>
-          <Button onClick={handleClose} autoFocus>
+          <Button onClick={() => {setOpenAlertDialog(false)}}>Disagree</Button>
+          <Button onClick={() => {confirmDelete();setOpenAlertDialog(false);}} autoFocus>
             Agree
           </Button>
         </DialogActions>
