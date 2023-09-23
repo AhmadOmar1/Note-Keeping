@@ -47,7 +47,11 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
   },
 }));
 
-export default function NavBar() {
+export default function NavBar({handleSearchChange}) {
+
+  const delay=()=>{
+setTimeout(()=>handleSearchChange,1000)
+  }
   return (
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="fixed">
@@ -56,7 +60,7 @@ export default function NavBar() {
           >
             Note Keeping
           </Typography>
-          <Search>
+          <Search  onChange={handleSearchChange}>
             <SearchIconWrapper>
               <SearchIcon />
             </SearchIconWrapper>
