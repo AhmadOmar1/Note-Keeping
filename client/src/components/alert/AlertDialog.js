@@ -20,7 +20,7 @@ export default function AlertDialog({ isOpen, confirmDelete,setOpenAlertDialog})
           {"Deleting the note"}
         </DialogTitle>
         <DialogContent>
-          <DialogContentText id="alert-dialog-description">
+          <DialogContentText id="alert-dialog-description" color={'error'}>
             Are you sure you want to delete this note?
           </DialogContentText>
         </DialogContent>
