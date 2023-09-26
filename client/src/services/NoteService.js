@@ -17,6 +17,7 @@ export async function fetchNotes() {
 }
 export async function addNote(newNote) {
     try {
+      
       const response = await fetch(`${url}/notes`, {
         method: 'POST',
         headers: {
@@ -33,4 +34,21 @@ export async function addNote(newNote) {
       console.error('Error adding note:', error);
       throw error;
     }
+  }
+
+  export async function deleteNote(noteId) {
+    try {
+      const response = await fetch(`${url}/notes/${noteId}`, {
+         method: 'DELETE',
+      })
+      if (response.ok) {
+        return true; 
+      } else {
+        throw new Error('Note deletion failed');
+      }
+    } catch (error) {
+      console.error('Error deleting note:', error);
+      return false;
+    }
+
   }

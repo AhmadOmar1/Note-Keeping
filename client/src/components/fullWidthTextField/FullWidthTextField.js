@@ -5,27 +5,29 @@ import CloseIcon from '@mui/icons-material/Close';
 function FullWidthTextField({ onAddNote }) {
   const [expanded, setExpanded] = useState(false);
   const [noteContent, setNoteContent] = useState('');
+  const [noteTitle, setNoteTitle] = useState('');
 
   const handleFocus = () => {
     setExpanded(true);
   };
 
   const handleAdd = () => {
+    console.log("here we added");
     if (noteContent.trim() !== '') {
+      console.log(noteContent);
+      const noteTitle = noteContent.split(' ').length > 1 ? `${noteContent.split(' ')[0]}  ${noteContent.split(' ')[0,1]}` : `${noteContent.split(' ')[0]}`;
       const newNote = {
-        title: '', // You can set a default title if needed
+        title: noteTitle, 
         content: noteContent,
-        creationDate: new Date().toLocaleDateString(), // Set the current date
+        creationDate: new Date().toLocaleDateString(),
       };
-
-      // Call the callback function to add the new note to the list in the parent component (HomePage)
+      
       onAddNote(newNote);
-
-      // Clear the noteContent state
+  
       setNoteContent('');
-
-      // Close the text field
-      setExpanded(false);
+      setNoteTitle(''); 
+  
+      handleClose();
     }
   };
 
